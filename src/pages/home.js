@@ -2,6 +2,7 @@ import React from 'react';
 import '../assets/css/application.css';
 import {dotsMovement} from '../assets/js/dots.js';
 import {scrollBG} from '../assets/js/colorChanger.js';
+import Throbber from '../components/throbber.js';
 
 import anime from '../assets/anime/lib/anime.es.js';
 
@@ -14,15 +15,7 @@ class Home extends React.Component {
 	componentDidMount(){
 		scrollBG(".color-change-bg", ["#134a89", "#6D289A", "#1ea185", "#134a89" ], 3500)
 
-		anime({
-			targets: ".throbber-inner",
-			scale: .5,
-			border: "2px",
-			easing: "easeInCubic",
-			direction: "alternate",
-			loop: true,
-			duration: 1500,
-		})
+	
 		let dotsRTL = document.getElementById("mv1");
 		let dotsLTR = document.getElementById("mv2");
 		let dotsLTR2 = document.getElementById("mv3");
@@ -53,9 +46,8 @@ class Home extends React.Component {
 								</div>
 
 							</div>
-							<div className="throbber-bottom right-m" id="first">
-								<div className="throbber-inner"></div>
-							</div>
+							<Throbber bottom id="first" mobile="right" />
+						
 						</div>
 
 						<div className="col-12">
@@ -69,9 +61,8 @@ class Home extends React.Component {
 						</div>
 
 						<div className="col-xs-12 col-lg-6">
-							<div className="throbber-top left-m" id="second">
-								<div className="throbber-inner"></div>
-							</div>
+						<Throbber top id="second" mobile="left" />
+
 							<div className="purple-gradient d-flex flex-column p-5 text-left overflow-visible">
 									<h2 className="white">
 										JavaScript 
@@ -84,9 +75,8 @@ class Home extends React.Component {
 									</h5>
 				
 							</div>
-							<div className="throbber-bottom left-m" id="third">
-								<div className="throbber-inner"></div>
-							</div>
+							<Throbber bottom id="third" mobile="left" />
+
 						</div>
 
 						<div className="col-xs-12 col-lg-6">
@@ -111,9 +101,8 @@ class Home extends React.Component {
 						</div>
 
 						<div className="col-sm-12 col-md-8">
-							<div className="throbber-top right-m"id="fourth">
-								<div className="throbber-inner"></div>
-							</div>
+						<Throbber top id="fourth" mobile="right" />
+
 							<div className="purple-gradient order-lg-2 d-flex flex-column p-5 text-left overflow-visible">
 								<h2 className="white">
 									Animations with anime.js
@@ -125,9 +114,8 @@ class Home extends React.Component {
 								<p>I'm using a modified version here to dynamically change the distance if the page size changes. (try it out)</p>
 							
 							</div>
-							<div className="throbber-bottom right-m" id="fifth">
-								<div className="throbber-inner"></div>
-							</div>
+							<Throbber bottom id="fifth" mobile="right" />
+
 						</div>
 
 						<div className="col-12">
@@ -141,9 +129,8 @@ class Home extends React.Component {
 						</div>
 
 						<div className="col-xs-12 col-md-8 col-lg-6">
-							<div className="throbber-top left-m" id="sixth">
-								<div className="throbber-inner"></div>
-							</div>
+						<Throbber top id="sixth" mobile="left" />
+
 							<div className="purple-gradient d-flex flex-column p-5 text-left overflow-visible">
 								<h2 className="white">
 									Use as you wish 
