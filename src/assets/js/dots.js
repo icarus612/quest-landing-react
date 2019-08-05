@@ -219,29 +219,29 @@ import anime from '../anime/lib/anime.es.js';
   }
   
   let animation = (e, t, svg, mvX, mvY, crv, clr, d) => {
-      let howFar = (s,e,vw) => {
-        let start = document.getElementById(s).getBoundingClientRect()
-        let end = document.getElementById(e).getBoundingClientRect()
-        let x = [(start.left+start.right)/2-vw, (end.left+end.right)/2-vw];
-        return x
-      }
-      let vw = document.getElementById("containerCheck").getBoundingClientRect().left+20
-      let animate = anime.timeline({
+    let howFar = (s,e,vw) => {
+      let start = document.getElementById(s).getBoundingClientRect()
+      let end = document.getElementById(e).getBoundingClientRect()
+      let x = [(start.left+start.right)/2 - vw, (end.left+end.right)/2 -vw];
+      return x
+    }
+    let vw = document.getElementById("container").getBoundingClientRect().left + 20
+    let animate = anime.timeline({
+
+    }).add({
+        targets: svg.children[e],         
+        translateX: translateX(howFar(mvX[0], mvX[1], vw), t, crv),
+        translateY: translateY(mvY, t, crv),
+        fill: fillColor(clr, t, svg),
+        backgroundColor: fillColor(clr, t, svg),
+        complete: function(anim){
+          animation(e, t, svg, mvX, mvY, crv, clr, 0)
+        },
+    }, d);
   
-      }).add({
-          targets: svg.children[e],         
-          translateX: translateX(howFar(mvX[0], mvX[1], vw), t, crv),
-          translateY: translateY(mvY, t, crv),
-          fill: fillColor(clr, t, svg),
-          backgroundColor: fillColor(clr, t, svg),
-          complete: function(anim){
-            animation(e, t, svg, mvX, mvY, crv, clr, 0)
-          },
-      }, d);
-    
-      return animate
-    
-  }
+    return animate
+  
+}
   
   export let dotsMovement = (svg, mvX, mvY, t, crv, clr) => {
     let delay = (el,time, n) =>{
