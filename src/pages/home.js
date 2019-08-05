@@ -5,7 +5,6 @@ import {scrollBG} from '../assets/js/colorChanger.js';
 import Throbber from '../components/throbber.js';
 import Swoosh from '../components/swoosh.js';
 
-import anime from '../assets/anime/lib/anime.es.js';
 
 class Home extends React.Component {
 
