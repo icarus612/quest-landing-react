@@ -3,6 +3,7 @@ import '../assets/css/application.css';
 import {dotsMovement} from '../assets/js/dots.js';
 import {scrollBG} from '../assets/js/colorChanger.js';
 import Throbber from '../components/throbber.js';
+import Swoosh from '../components/swoosh.js';
 
 import anime from '../assets/anime/lib/anime.es.js';
 
@@ -15,14 +16,6 @@ class Home extends React.Component {
 	componentDidMount(){
 		scrollBG(".color-change-bg", ["#134a89", "#6D289A", "#1ea185", "#134a89" ], 3500)
 
-	
-		let dotsRTL = document.getElementById("mv1");
-		let dotsLTR = document.getElementById("mv2");
-		let dotsLTR2 = document.getElementById("mv3");
-		dotsMovement(dotsRTL, ["first", "second"], [-6, 360], 1000, "cubicX", ["#009de4", "#06f3a0", "#f30659"]);
-		dotsMovement(dotsLTR, ["third", "fourth"], [-6, 360], 1000, "cubicX", ["#009de4", "#06f3a0", "#f30659"]);
-		dotsMovement(dotsLTR2, ["fifth", "sixth"], [-6, 360], 1000, "cubicX", ["#009de4", "#06f3a0", "#f30659"]);
-
 	}
 	render(){
 		return (
@@ -30,7 +23,6 @@ class Home extends React.Component {
 			<div className="pb-5 color-change-bg overflow-hidden">
 				<div className="pb-5 container">
 					<div className="row align-items-center" id="container">
-
 						<div className="col-12">
 							<div className="purple-gradient mt-5 d-flex flex-column p-5 text-center overflow-visible" id="parallaxHeader">
 								<h1 className="white qHeader">
@@ -47,28 +39,17 @@ class Home extends React.Component {
 
 							</div>
 							<Throbber bottom id="first" mobile="right" />
-						
 						</div>
-
-						<div className="col-12">
-							<div id="mv1">
-								<div className="dot"></div>
-								<div className="dot"></div>
-								<div className="dot"></div>
-								<div className="dot"></div>
-								<div className="dot"></div>
-							</div>
-						</div>
+						<Swoosh id="mv1" startEl="first" endEl="second" />
 
 						<div className="col-xs-12 col-lg-6">
-						<Throbber top id="second" mobile="left" />
-
+							<Throbber top id="second" mobile="left" />
 							<div className="purple-gradient d-flex flex-column p-5 text-left overflow-visible">
 									<h2 className="white">
 										JavaScript 
 									</h2>
 									<h5 className="my-3 white">
-										JavaScript is amazing for so many reasons, and if you don,t believe me, look uo "how to disable Javascript in my browser", and play around online for 10-20 minutes. (Most pages wont even let you view them without JS enabled)
+										JavaScript is amazing for so many reasons, and if you don't believe me, look uo "how to disable Javascript in my browser", and play around online for 10-20 minutes. (Most pages wont even let you view them without JS enabled)
 									</h5>
 									<h5>
 										Most of my pages are made to show off JavaScript animation, that are fun, reactive and interactive with the user.
@@ -76,33 +57,17 @@ class Home extends React.Component {
 				
 							</div>
 							<Throbber bottom id="third" mobile="left" />
-
 						</div>
-
 						<div className="col-xs-12 col-lg-6">
 							<div className="hero hero-video intro">
-
-
 							</div>
 						</div>
-
-						<div className="col-12">
-							<div id="mv2">
-								<div className="dot"></div>
-								<div className="dot"></div>
-								<div className="dot"></div>
-								<div className="dot"></div>
-								<div className="dot"></div>
-							</div>						
-						</div>
-
+						<Swoosh id="mv2" startEl="third" endEl="fourth" />
 						<div className="d-none d-md-block col-md-4">
 							<div className="order-lg-1 mt-5 mt-lg-0 mx-lg-5"></div>
 						</div>
-
 						<div className="col-sm-12 col-md-8">
-						<Throbber top id="fourth" mobile="right" />
-
+							<Throbber top id="fourth" mobile="right" />
 							<div className="purple-gradient order-lg-2 d-flex flex-column p-5 text-left overflow-visible">
 								<h2 className="white">
 									Animations with anime.js
@@ -115,22 +80,10 @@ class Home extends React.Component {
 							
 							</div>
 							<Throbber bottom id="fifth" mobile="right" />
-
 						</div>
-
-						<div className="col-12">
-								<div id="mv3">
-									<div className="dot"></div>
-									<div className="dot"></div>
-									<div className="dot"></div>
-									<div className="dot"></div>
-									<div className="dot"></div>
-								</div>			
-						</div>
-
+						<Swoosh id="mv3" startEl="fifth" endEl="sixth" />
 						<div className="col-xs-12 col-md-8 col-lg-6">
-						<Throbber top id="sixth" mobile="left" />
-
+							<Throbber top id="sixth" mobile="left" />
 							<div className="purple-gradient d-flex flex-column p-5 text-left overflow-visible">
 								<h2 className="white">
 									Use as you wish 
@@ -141,7 +94,6 @@ class Home extends React.Component {
 								</h5>
 								<div className="my-4 text-center dark">
 										<a className="btn btn-lg btn-primary btn-purple-basic" target='_blank' href="https://github.com/icarus612/questLandingPage">Quest</a>
-	
 										<a className="btn btn-lg btn-primary btn-purple-basic" target='_blank' href="https://github.com/icarus612/angelicarus">Icarus</a>
 									</div>
 							</div>
@@ -150,10 +102,6 @@ class Home extends React.Component {
 					</div>
 				</div>
 			</div>
-
-
-
-
 			<section className="py-5 position-relative overflow-hidden pt-5" id='contactMe'>
 				<div className="container">
 					<div className="col-12 py-md-3 text-center text-white my-4">

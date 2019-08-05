@@ -19,7 +19,7 @@ export default class Throbber extends React.Component {
     }
 	componentDidMount(){
         anime({
-			targets: ".throbber-inner",
+			targets: `.throbber-inner`,
 			scale: .5,
 			border: "2px",
 			easing: "easeInCubic",
