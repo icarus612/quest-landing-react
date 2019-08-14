@@ -1,6 +1,5 @@
 import React from 'react';
 import '../assets/css/application.css';
-import {dotsMovement} from '../assets/js/dots.js';
 import {scrollBG} from '../assets/js/colorChanger.js';
 import Throbber from '../components/throbber.js';
 import Swoosh from '../components/swoosh.js';
