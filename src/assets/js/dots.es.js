@@ -1,4 +1,4 @@
-const anime = require('../anime/lib/anime.js');  
+import anime from '../anime/lib/anime.es.js';  
   
   const where = (e) => {
     return (e[1] + e[0])/2 ;
@@ -242,8 +242,8 @@ const anime = require('../anime/lib/anime.js');
     return animate
   
 }
-
-  let dotsMovement = (svg, mvX, mvY, t, crv, clr) => {
+  
+  export let dotsMovement = (svg, mvX, mvY, t, crv, clr) => {
     let delay = (el,time, n) =>{
       return 3.5 * time / el.children.length * n
     }
@@ -262,4 +262,4 @@ const anime = require('../anime/lib/anime.js');
     }
   }
   
-  module.exports = dotsMovement;
+  
