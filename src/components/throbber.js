@@ -1,23 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../assets/css/application.css';
 
 import anime from '../assets/anime/lib/anime.es.js';
 
-export default class Throbber extends React.Component {
-    constructor(props){
-		super(props);
-		this.state ={
-            classes: '',
-        }
-        this.where = this.where.bind(this);
-    }
-    where(){
-        if (this.props.bottom) this.classes = 'throbber-bottom ';
-        if (this.props.top) this.classes = 'throbber-top ';
-        this.classes += `${this.props.mobile}-m` 
-        return this.classes
-    }
-	componentDidMount(){
+export const Throbber = (props) => {
+    let classes;
+    if (props.bottom) classes = 'throbber-bottom ';
+    if (props.top) classes = 'throbber-top ';
+    classes += `${props.mobile}-m`; 
+	useEffect(() => {
         anime({
 			targets: `.throbber-inner`,
 			scale: .5,
@@ -25,15 +16,12 @@ export default class Throbber extends React.Component {
 			easing: "easeInCubic",
 			direction: "alternate",
 			loop: true,
-			duration: 1500,
-		})
-       
-	}
-	render(){
-		return (
-            <div className={this.where()} id={this.props.id}>
-                <div className="throbber-inner"></div>
-            </div>
-        )
-    }
+			duration: 1500
+		});
+	}, []);
+    return (
+        <div className={ classes } id={ props.id }>
+            <div className="throbber-inner"></div>
+        </div>
+    )
 }

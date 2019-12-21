@@ -1,23 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../assets/css/application.css';
-import {scrollBG} from '../assets/js/colorChanger.js';
-import Throbber from '../components/throbber.js';
-import Swoosh from '../components/swoosh.js';
+import { scrollBG } from '../assets/js/colorChanger.js';
+import { Throbber } from '../components/throbber.js';
+import { Swoosh } from '../components/swoosh.js';
 
 
-class Home extends React.Component {
-
-	constructor(props){
-		super(props);
-		
-	}
-	componentDidMount(){
-		scrollBG(".color-change-bg", ["#134a89", "#6D289A", "#1ea185", "#134a89" ], 3500)
-
-	}
-	render(){
-		return (
-			<article id="main" className="overflow-hidden">
+export const Home = (props) => {
+	useEffect(() => scrollBG(".color-change-bg", ["#134a89", "#6D289A", "#1ea185", "#134a89" ], 3500));
+	return (
+		<article id="main" className="overflow-hidden">
 			<div className="pb-5 color-change-bg overflow-hidden">
 				<div className="pb-5 container">
 					<div className="row align-items-center" id="container">
@@ -31,28 +22,24 @@ class Home extends React.Component {
 								</h5>
 								<div className="my-4 dark">
 									<a className="btn btn-lg btn-primary btn-purple-basic" href="https://github.com/icarus612/questLandingPage">Visit Github</a>
-
 									<a className="btn btn-lg btn-primary btn-purple-basic" target='_blank' href="https://www.projecticarus.net">Main Site</a>
 								</div>
-
 							</div>
 							<Throbber bottom id="first" mobile="right" />
 						</div>
 						<Swoosh id="mv1" startEl="first" endEl="second" />
-
 						<div className="col-xs-12 col-lg-6">
 							<Throbber top id="second" mobile="left" />
 							<div className="purple-gradient d-flex flex-column p-5 text-left overflow-visible">
-									<h2 className="white">
-										JavaScript 
-									</h2>
-									<h5 className="my-3 white">
-										JavaScript is amazing for so many reasons, and if you don't believe me, look uo "how to disable Javascript in my browser", and play around online for 10-20 minutes. (Most pages wont even let you view them without JS enabled)
-									</h5>
-									<h5>
-										Most of my pages are made to show off JavaScript animation, that are fun, reactive and interactive with the user.
-									</h5>
-				
+								<h2 className="white">
+									JavaScript 
+								</h2>
+								<h5 className="my-3 white">
+									JavaScript is amazing for so many reasons, and if you don't believe me, look uo "how to disable Javascript in my browser", and play around online for 10-20 minutes. (Most pages wont even let you view them without JS enabled)
+								</h5>
+								<h5>
+									Most of my pages are made to show off JavaScript animation, that are fun, reactive and interactive with the user.
+								</h5>
 							</div>
 							<Throbber bottom id="third" mobile="left" />
 						</div>
@@ -73,9 +60,7 @@ class Home extends React.Component {
 								<h5>
 									This is whats going on behind the scenes with the dots. (to see the dots animation repo <a target='_blank' href="https://github.com/icarus612/dots">click here</a>
 								</h5>
-							
 								<p>I'm using a modified version here to dynamically change the distance if the page size changes. (try it out)</p>
-							
 							</div>
 							<Throbber bottom id="fifth" mobile="right" />
 						</div>
@@ -91,12 +76,11 @@ class Home extends React.Component {
 									The link to either github is here:
 								</h5>
 								<div className="my-4 text-center dark">
-										<a className="btn btn-lg btn-primary btn-purple-basic" target='_blank' href="https://github.com/icarus612/questLandingPage">Quest</a>
-										<a className="btn btn-lg btn-primary btn-purple-basic" target='_blank' href="https://github.com/icarus612/angelicarus">Icarus</a>
-									</div>
+									<a className="btn btn-lg btn-primary btn-purple-basic" target='_blank' href="https://github.com/icarus612/questLandingPage">Quest</a>
+									<a className="btn btn-lg btn-primary btn-purple-basic" target='_blank' href="https://github.com/icarus612/angelicarus">Icarus</a>
+								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
@@ -109,7 +93,6 @@ class Home extends React.Component {
 						<div className="d-flex flex-column flex-md-row justify-content-between align-items-around">
 							<div className="my-4 col-12 dark">
 								<a className="btn btn-lg btn-primary btn-purple" href="https://github.com/icarus612/questLandingPage">Visit Github</a>
-
 								<a className="btn btn-lg btn-primary btn-purple" href="https://www.projecticarus.net">See Site</a>
 							</div>
 						</div>
@@ -117,13 +100,6 @@ class Home extends React.Component {
 
 				</div>
 			</section>
-				 
-			
-		
-			</article>
-		);
-	}
-  
+		</article>
+	);
 }
-
-export default Home;

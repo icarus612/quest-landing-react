@@ -1,30 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react'
 import {dotsMovement} from '../assets/js/dots.es.js';
 
 
-export default class Swoosh extends React.Component {
-    constructor(props){
-		super(props);
-		this.state ={
-            classes: '',
-        }
-    }
-
-	componentDidMount(){
-        let move = document.getElementById(this.props.id);
-		dotsMovement(move, [this.props.startEl, this.props.endEl], [-6, 360], 1000, "cubicX", ["#009de4", "#06f3a0", "#f30659"]);       
-	}
-	render(){
-		return (
-            <div className="col-12">
-                <div id={this.props.id}>
-                    <div className="dot"></div>
-                    <div className="dot"></div>
-                    <div className="dot"></div>
-                    <div className="dot"></div>
-                    <div className="dot"></div>
-                </div>						
-            </div>
-        )
-    }
+export const Swoosh = (props) => {
+	useEffect(() => {
+        let move = document.getElementById(props.id);
+		dotsMovement(move, [props.startEl, props.endEl], [-6, 360], 1000, "cubicX", ["#009de4", "#06f3a0", "#f30659"]);       
+    });
+    
+    return (
+        <div className="col-12">
+            <div id={ props.id }>
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+            </div>						
+        </div>
+    )
 }
