@@ -2,12 +2,11 @@ import React, { useEffect } from 'react'
 import {dotsMovement} from '../assets/js/dots.es.js';
 
 
-export const Swoosh = (props) => {
+const Swoosh = (props) => {
 	useEffect(() => {
         let move = document.getElementById(props.id);
 		dotsMovement(move, [props.startEl, props.endEl], [-6, 360], 1000, "cubicX", ["#009de4", "#06f3a0", "#f30659"]);       
-    });
-    
+    });    
     return (
         <div className="col-12">
             <div id={ props.id }>
@@ -20,3 +19,4 @@ export const Swoosh = (props) => {
         </div>
     )
 }
+export default Swoosh;

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import '../assets/css/application.css';
-
 import anime from '../assets/anime/lib/anime.es.js';
 
 export const Throbber = (props) => {
@@ -25,3 +24,4 @@ export const Throbber = (props) => {
         </div>
     )
 }
+export default Throbber;

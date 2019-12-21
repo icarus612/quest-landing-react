@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import '../assets/css/application.css';
 import { scrollBG } from '../assets/js/colorChanger.js';
-import { Throbber } from '../components/throbber.js';
-import { Swoosh } from '../components/swoosh.js';
+import Throbber from '../components/throbber.js';
+import Swoosh from '../components/swoosh.js';
 
 
-export const Home = (props) => {
+const Home = (props) => {
 	useEffect(() => scrollBG(".color-change-bg", ["#134a89", "#6D289A", "#1ea185", "#134a89" ], 3500));
 	return (
 		<article id="main" className="overflow-hidden">
@@ -103,3 +103,4 @@ export const Home = (props) => {
 		</article>
 	);
 }
+export default Home;

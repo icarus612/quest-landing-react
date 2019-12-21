@@ -4,8 +4,6 @@ import indexRoutes from './routes.js';
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
 
-
-
 var hist = createBrowserHistory();
 
 ReactDOM.render(
