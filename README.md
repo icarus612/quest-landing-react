@@ -1,6 +1,6 @@
 # Quest Landing Page
 
-## An Original Design By: Dev.Icarus
+## An Original Design By: dev.icarus
 
 #### live demo: https://quest.devicarus.com
 
